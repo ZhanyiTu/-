@@ -97,12 +97,25 @@ void CMy1Doc::OnImageprocessingOpenbmpfile()
 
 void CMy1Doc::OnImageprocessingSavetonewbmpfile()
 {
-	if( pFileBuf != NULL )
-	{
-		CString strBmpFile = "2.bmp";
-		SaveDIB(pFileBuf, strBmpFile);
-	}
+    LPCTSTR lpszFilter = "BMP Files (*.bmp)|*.bmp||";
+    CFileDialog dlg(TRUE, NULL, NULL, OFN_NOCHANGEDIR, lpszFilter, NULL);//创建对话框
+    if (dlg.DoModal() != IDOK) return;//确认对话框是否处于文件夹选择器模式
+    if (pFileBuf != NULL)
+    {
+        CString ext = ".bmp";
+        CString strBmpFile = dlg.GetFileTitle() + ext;
+        SaveDIB(pFileBuf, strBmpFile);
+    }
 }
+
+//void CMy1Doc::OnImageprocessingSavetonewbmpfile()
+//{
+//	if( pFileBuf != NULL )
+//	{
+//		CString strBmpFile = "2.bmp";
+//		SaveDIB(pFileBuf, strBmpFile);
+//	}
+//}
 
 void CMy1Doc::OnImageprocessingImageinterpolation()
 {
