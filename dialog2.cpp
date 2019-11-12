@@ -1,7 +1,7 @@
 ﻿// dialog2.cpp: 实现文件
 //
 
-#include "pch.h"
+#include "stdafx.h"
 #include "1.h"
 #include "dialog2.h"
 #include "afxdialogex.h"
@@ -13,6 +13,11 @@ IMPLEMENT_DYNAMIC(dialog2, CDialogEx)
 
 dialog2::dialog2(CWnd* pParent /*=nullptr*/)
 	: CDialogEx(IDD_DIALOG2, pParent)
+    , x(0)
+    , y(0)
+    , r(0)
+    , g(0)
+    , b(0)
 {
 
 }
@@ -23,7 +28,12 @@ dialog2::~dialog2()
 
 void dialog2::DoDataExchange(CDataExchange* pDX)
 {
-	CDialogEx::DoDataExchange(pDX);
+    CDialogEx::DoDataExchange(pDX);
+    DDX_Text(pDX, IDC_EDIT2, x);
+    DDX_Text(pDX, IDC_EDIT3, y);
+    DDX_Text(pDX, IDC_EDIT4, r);
+    DDX_Text(pDX, IDC_EDIT5, g);
+    DDX_Text(pDX, IDC_EDIT6, b);
 }
 
 

@@ -4,6 +4,7 @@
 #include "stdafx.h"
 #include "1.h"
 #include "dialog1.h"
+#include "dialog2.h"
 #include "1Doc.h"
 #include "1View.h"
 #include "..\\Common\\GlobalCommon.h"
@@ -153,16 +154,16 @@ void CMy1View::OnImageprocessingReadpixelvalue()
 
 void CMy1View::OnImageprocessingSetpixelvalue()
 {
-    dialog1 dlg;
+    dialog2 dlg;
     int x, y;
     dlg.DoModal();
     x = dlg.x;
     y = dlg.y;
 	RGBQUAD rgb;
 	rgb.rgbReserved = 255;
-	rgb.rgbRed      = 255;
-	rgb.rgbGreen    = 255;
-	rgb.rgbBlue     = 255;
+	rgb.rgbRed      = dlg.r;
+	rgb.rgbGreen    = dlg.g;
+	rgb.rgbBlue     = dlg.b;
 	CMy1Doc *pDoc = GetDocument();
 	ASSERT_VALID(pDoc);
 	if (!pDoc) return;
