@@ -3,7 +3,7 @@
 
 #include "stdafx.h"
 #include "1.h"
-
+#include "dialog1.h"
 #include "1Doc.h"
 #include "1View.h"
 #include "..\\Common\\GlobalCommon.h"
@@ -129,8 +129,11 @@ void CMy1View::OnUpdateImageprocessingDisplayfileheader(CCmdUI *pCmdUI)
 
 void CMy1View::OnImageprocessingReadpixelvalue()
 {
-	int x = 100;
-	int y = 100;
+    dialog1 dlg;
+    int x, y;
+    dlg.DoModal();
+    x = dlg.x;
+    y = dlg.y;
 	RGBQUAD rgb;
 	CMy1Doc *pDoc = GetDocument();
 	ASSERT_VALID(pDoc);
@@ -150,8 +153,11 @@ void CMy1View::OnImageprocessingReadpixelvalue()
 
 void CMy1View::OnImageprocessingSetpixelvalue()
 {
-	int x = 100;
-	int y = 100;
+    dialog1 dlg;
+    int x, y;
+    dlg.DoModal();
+    x = dlg.x;
+    y = dlg.y;
 	RGBQUAD rgb;
 	rgb.rgbReserved = 255;
 	rgb.rgbRed      = 255;

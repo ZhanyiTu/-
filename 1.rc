@@ -1,5 +1,7 @@
 // Microsoft Visual C++ generated resource script.
 //
+#pragma code_page(65001)
+
 #include "resource.h"
 
 #define APSTUDIO_READONLY_SYMBOLS
@@ -16,13 +18,10 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// ����(�л����񹲺͹�) resources
+// 中文(简体，中国) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
-#ifdef _WIN32
 LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
-#pragma code_page(936)
-#endif //_WIN32
 
 #ifdef APSTUDIO_INVOKED
 /////////////////////////////////////////////////////////////////////////////
@@ -54,9 +53,9 @@ BEGIN
     "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
     "LANGUAGE 4, 2\r\n"
     "#pragma code_page(936)\r\n"
-    "#include ""res\\My1.rc2""  // �� Microsoft Visual C++ �༭����Դ\r\n"
-    "#include ""l.CHS\\afxres.rc""          // ��׼���\r\n"
-    "#include ""l.CHS\\afxprint.rc""        // ��ӡ/��ӡԤ����Դ\r\n"
+    "#include ""res\\My1.rc2""  // 非 Microsoft Visual C++ 编辑的资源\r\n"
+    "#include ""l.CHS\\afxres.rc""          // 标准组件\r\n"
+    "#include ""l.CHS\\afxprint.rc""        // 打印/打印预览资源\r\n"
     "#endif\r\n"
     "\0"
 END
@@ -72,7 +71,9 @@ END
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
 IDR_MAINFRAME           ICON                    "res\\1.ico"
+
 IDR_My1TYPE             ICON                    "res\\1Doc.ico"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -81,12 +82,13 @@ IDR_My1TYPE             ICON                    "res\\1Doc.ico"
 
 IDR_MAINFRAME           BITMAP                  "res\\Toolbar.bmp"
 
+
 /////////////////////////////////////////////////////////////////////////////
 //
 // Toolbar
 //
 
-IDR_MAINFRAME TOOLBAR  16, 15
+IDR_MAINFRAME TOOLBAR 16, 15
 BEGIN
     BUTTON      ID_FILE_NEW
     BUTTON      ID_FILE_OPEN
@@ -106,39 +108,39 @@ END
 // Menu
 //
 
-IDR_MAINFRAME MENU 
+IDR_MAINFRAME MENU
 BEGIN
-    POPUP "�ļ�(&F)"
+    POPUP "文件(&F)"
     BEGIN
-        MENUITEM "�½�(&N)\tCtrl+N",              ID_FILE_NEW
-        MENUITEM "��(&O)...\tCtrl+O",           ID_FILE_OPEN
-        MENUITEM "����(&S)\tCtrl+S",              ID_FILE_SAVE
-        MENUITEM "����Ϊ(&A)...",                  ID_FILE_SAVE_AS
+        MENUITEM "新建(&N)\tCtrl+N",              ID_FILE_NEW
+        MENUITEM "打开(&O)...\tCtrl+O",           ID_FILE_OPEN
+        MENUITEM "保存(&S)\tCtrl+S",              ID_FILE_SAVE
+        MENUITEM "另存为(&A)...",                  ID_FILE_SAVE_AS
         MENUITEM SEPARATOR
-        MENUITEM "��ӡ(&P)...\tCtrl+P",           ID_FILE_PRINT
-        MENUITEM "��ӡԤ��(&V)",                    ID_FILE_PRINT_PREVIEW
-        MENUITEM "��ӡ����(&R)...",                 ID_FILE_PRINT_SETUP
+        MENUITEM "打印(&P)...\tCtrl+P",           ID_FILE_PRINT
+        MENUITEM "打印预览(&V)",                    ID_FILE_PRINT_PREVIEW
+        MENUITEM "打印设置(&R)...",                 ID_FILE_PRINT_SETUP
         MENUITEM SEPARATOR
-        MENUITEM "������ļ�",                       ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM "最近的文件",                       ID_FILE_MRU_FILE1, GRAYED
         MENUITEM SEPARATOR
-        MENUITEM "�˳�(&X)",                      ID_APP_EXIT
+        MENUITEM "退出(&X)",                      ID_APP_EXIT
     END
-    POPUP "�༭(&E)"
+    POPUP "编辑(&E)"
     BEGIN
-        MENUITEM "����(&U)\tCtrl+Z",              ID_EDIT_UNDO
+        MENUITEM "撤消(&U)\tCtrl+Z",              ID_EDIT_UNDO
         MENUITEM SEPARATOR
-        MENUITEM "����(&T)\tCtrl+X",              ID_EDIT_CUT
-        MENUITEM "����(&C)\tCtrl+C",              ID_EDIT_COPY
-        MENUITEM "ճ��(&P)\tCtrl+V",              ID_EDIT_PASTE
+        MENUITEM "剪切(&T)\tCtrl+X",              ID_EDIT_CUT
+        MENUITEM "复制(&C)\tCtrl+C",              ID_EDIT_COPY
+        MENUITEM "粘贴(&P)\tCtrl+V",              ID_EDIT_PASTE
     END
-    POPUP "��ͼ(&V)"
+    POPUP "视图(&V)"
     BEGIN
-        MENUITEM "������(&T)",                     ID_VIEW_TOOLBAR
-        MENUITEM "״̬��(&S)",                     ID_VIEW_STATUS_BAR
+        MENUITEM "工具栏(&T)",                     ID_VIEW_TOOLBAR
+        MENUITEM "状态栏(&S)",                     ID_VIEW_STATUS_BAR
     END
-    POPUP "����(&H)"
+    POPUP "帮助(&H)"
     BEGIN
-        MENUITEM "���� 1(&A)...",                 ID_APP_ABOUT
+        MENUITEM "关于 1(&A)...",                 ID_APP_ABOUT
     END
     POPUP "Image Processing"
     BEGIN
@@ -157,7 +159,7 @@ END
 // Accelerator
 //
 
-IDR_MAINFRAME ACCELERATORS 
+IDR_MAINFRAME ACCELERATORS
 BEGIN
     "N",            ID_FILE_NEW,            VIRTKEY, CONTROL
     "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL
@@ -183,13 +185,45 @@ END
 
 IDD_ABOUTBOX DIALOGEX 0, 0, 170, 62
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "���� 1"
+CAPTION "关于 1"
 FONT 9, "MS Shell Dlg", 0, 0, 0x1
 BEGIN
     ICON            IDR_MAINFRAME,IDC_STATIC,14,14,21,20
     LTEXT           "1, Version 1.0",IDC_STATIC,42,14,114,8,SS_NOPREFIX
     LTEXT           "Copyright (C) 2012",IDC_STATIC,42,26,114,8
-    DEFPUSHBUTTON   "ȷ��",IDOK,113,41,50,14,WS_GROUP
+    DEFPUSHBUTTON   "确定",IDOK,113,41,50,14,WS_GROUP
+END
+
+IDD_DIALOG1 DIALOGEX 0, 0, 309, 176
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,198,155,50,14
+    PUSHBUTTON      "取消",IDCANCEL,252,155,50,14
+    EDITTEXT        IDC_EDIT1,201,38,72,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT2,202,112,73,15,ES_AUTOHSCROLL
+    LTEXT           "x:",IDC_STATIC,42,38,73,14
+    LTEXT           "y:",IDC_STATIC,43,115,75,16
+END
+
+IDD_DIALOG2 DIALOGEX 0, 0, 309, 176
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,198,155,50,14
+    PUSHBUTTON      "取消",IDCANCEL,252,155,50,14
+    LTEXT           "x:",IDC_STATIC,47,15,68,13
+    LTEXT           "Static",IDC_STATIC,47,39,72,12
+    LTEXT           "Static",IDC_STATIC,47,71,76,13
+    LTEXT           "Static",IDC_STATIC,47,102,82,14
+    LTEXT           "Static",IDC_STATIC,47,137,89,14
+    EDITTEXT        IDC_EDIT2,159,15,88,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT3,160,38,88,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT4,160,70,88,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT5,161,101,88,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT6,160,135,88,13,ES_AUTOHSCROLL
 END
 
 
@@ -215,13 +249,13 @@ BEGIN
     BEGIN
         BLOCK "080403a8"
         BEGIN
-            VALUE "CompanyName", "TODO: <��˾��>"
-            VALUE "FileDescription", "TODO: <�ļ�˵��>"
+            VALUE "CompanyName", "TODO: <公司名>"
+            VALUE "FileDescription", "TODO: <文件说明>"
             VALUE "FileVersion", "1.0.0.1"
             VALUE "InternalName", "1.exe"
-            VALUE "LegalCopyright", "TODO: (C) <��˾��>����������Ȩ����"
+            VALUE "LegalCopyright", "TODO: (C) <公司名>。保留所有权利。"
             VALUE "OriginalFilename", "1.exe"
-            VALUE "ProductName", "TODO: <��Ʒ��>"
+            VALUE "ProductName", "TODO: <产品名>"
             VALUE "ProductVersion", "1.0.0.1"
         END
     END
@@ -238,7 +272,7 @@ END
 //
 
 #ifdef APSTUDIO_INVOKED
-GUIDELINES DESIGNINFO 
+GUIDELINES DESIGNINFO
 BEGIN
     IDD_ABOUTBOX, DIALOG
     BEGIN
@@ -247,8 +281,45 @@ BEGIN
         TOPMARGIN, 7
         BOTTOMMARGIN, 55
     END
+
+    IDD_DIALOG1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 302
+        VERTGUIDE, 152
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 169
+        HORZGUIDE, 88
+    END
+
+    IDD_DIALOG2, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 302
+        VERTGUIDE, 47
+        VERTGUIDE, 145
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 169
+        HORZGUIDE, 59
+    END
 END
 #endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_DIALOG1 AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_DIALOG2 AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -256,23 +327,23 @@ END
 // String Table
 //
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
-    IDP_OLE_INIT_FAILED     "OLE ��ʼ��ʧ�ܡ���ȷ�� OLE ������ȷ�İ汾��"
+    IDP_OLE_INIT_FAILED     "OLE 初始化失败。请确保 OLE 库是正确的版本。"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDR_MAINFRAME           "1\n\n1\n\n\nMy1.Document\n1.Document"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     AFX_IDS_APP_TITLE       "1"
-    AFX_IDS_IDLEMESSAGE     "����"
+    AFX_IDS_IDLEMESSAGE     "就绪"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     ID_INDICATOR_EXT        "EXT"
     ID_INDICATOR_CAPS       "CAP"
@@ -282,100 +353,100 @@ BEGIN
     ID_INDICATOR_REC        "REC"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
-    ID_FILE_NEW             "�������ĵ�\n�½�"
-    ID_FILE_OPEN            "�������ĵ�\n��"
-    ID_FILE_CLOSE           "�رջ�ĵ�\n�ر�"
-    ID_FILE_SAVE            "�����ĵ�\n����"
-    ID_FILE_SAVE_AS         "�������Ʊ����ĵ�\n����Ϊ"
-    ID_FILE_PAGE_SETUP      "���Ĵ�ӡѡ��\nҳ������"
-    ID_FILE_PRINT_SETUP     "���Ĵ�ӡ��ѡ��ʹ�ӡѡ��\n��ӡ����"
-    ID_FILE_PRINT           "��ӡ��ĵ�\n��ӡ"
-    ID_FILE_PRINT_PREVIEW   "��ʾ��ҳ\n��ӡԤ��"
+    ID_FILE_NEW             "创建新文档\n新建"
+    ID_FILE_OPEN            "打开现有文档\n打开"
+    ID_FILE_CLOSE           "关闭活动文档\n关闭"
+    ID_FILE_SAVE            "保存活动文档\n保存"
+    ID_FILE_SAVE_AS         "用新名称保存活动文档\n另存为"
+    ID_FILE_PAGE_SETUP      "更改打印选项\n页面设置"
+    ID_FILE_PRINT_SETUP     "更改打印机选项和打印选项\n打印设置"
+    ID_FILE_PRINT           "打印活动文档\n打印"
+    ID_FILE_PRINT_PREVIEW   "显示整页\n打印预览"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
-    ID_APP_ABOUT            "��ʾ������Ϣ���汾�źͰ�Ȩ\n����"
-    ID_APP_EXIT             "�˳�Ӧ�ó�����ʾ�����ĵ�\n�˳�"
+    ID_APP_ABOUT            "显示程序信息、版本号和版权\n关于"
+    ID_APP_EXIT             "退出应用程序；提示保存文档\n退出"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
-    ID_FILE_MRU_FILE1       "�򿪴��ĵ�"
-    ID_FILE_MRU_FILE2       "�򿪴��ĵ�"
-    ID_FILE_MRU_FILE3       "�򿪴��ĵ�"
-    ID_FILE_MRU_FILE4       "�򿪴��ĵ�"
-    ID_FILE_MRU_FILE5       "�򿪴��ĵ�"
-    ID_FILE_MRU_FILE6       "�򿪴��ĵ�"
-    ID_FILE_MRU_FILE7       "�򿪴��ĵ�"
-    ID_FILE_MRU_FILE8       "�򿪴��ĵ�"
-    ID_FILE_MRU_FILE9       "�򿪴��ĵ�"
-    ID_FILE_MRU_FILE10      "�򿪴��ĵ�"
-    ID_FILE_MRU_FILE11      "�򿪴��ĵ�"
-    ID_FILE_MRU_FILE12      "�򿪴��ĵ�"
-    ID_FILE_MRU_FILE13      "�򿪴��ĵ�"
-    ID_FILE_MRU_FILE14      "�򿪴��ĵ�"
-    ID_FILE_MRU_FILE15      "�򿪴��ĵ�"
-    ID_FILE_MRU_FILE16      "�򿪴��ĵ�"
+    ID_FILE_MRU_FILE1       "打开此文档"
+    ID_FILE_MRU_FILE2       "打开此文档"
+    ID_FILE_MRU_FILE3       "打开此文档"
+    ID_FILE_MRU_FILE4       "打开此文档"
+    ID_FILE_MRU_FILE5       "打开此文档"
+    ID_FILE_MRU_FILE6       "打开此文档"
+    ID_FILE_MRU_FILE7       "打开此文档"
+    ID_FILE_MRU_FILE8       "打开此文档"
+    ID_FILE_MRU_FILE9       "打开此文档"
+    ID_FILE_MRU_FILE10      "打开此文档"
+    ID_FILE_MRU_FILE11      "打开此文档"
+    ID_FILE_MRU_FILE12      "打开此文档"
+    ID_FILE_MRU_FILE13      "打开此文档"
+    ID_FILE_MRU_FILE14      "打开此文档"
+    ID_FILE_MRU_FILE15      "打开此文档"
+    ID_FILE_MRU_FILE16      "打开此文档"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
-    ID_NEXT_PANE            "�л�����һ������\n��һ����"
-    ID_PREV_PANE            "�л�����һ������\n��һ����"
+    ID_NEXT_PANE            "切换到下一个窗格\n下一窗格"
+    ID_PREV_PANE            "切换回上一个窗格\n上一窗格"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
-    ID_WINDOW_SPLIT         "������ڲ��Ϊ�������\n���"
+    ID_WINDOW_SPLIT         "将活动窗口拆分为多个窗格\n拆分"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
-    ID_EDIT_CLEAR           "���ѡ������\n���"
-    ID_EDIT_CLEAR_ALL       "���ȫ������\nȫ�����"
-    ID_EDIT_COPY            "����ѡ�����ݲ�����ŵ���������\n����"
-    ID_EDIT_CUT             "����ѡ�����ݲ�����ŵ���������\n����"
-    ID_EDIT_FIND            "����ָ�����ı�\n����"
-    ID_EDIT_PASTE           "�������������\nճ��"
-    ID_EDIT_REPEAT          "�ظ���һ����\n�ظ�"
-    ID_EDIT_REPLACE         "�������ı��滻�ض����ı�\n�滻"
-    ID_EDIT_SELECT_ALL      "ѡ�������ĵ�\nȫѡ"
-    ID_EDIT_UNDO            "������һ����\n����"
-    ID_EDIT_REDO            "�ָ��ϴγ����Ĳ���\n����"
+    ID_EDIT_CLEAR           "清除选定内容\n清除"
+    ID_EDIT_CLEAR_ALL       "清除全部内容\n全部清除"
+    ID_EDIT_COPY            "复制选定内容并将其放到剪贴板上\n复制"
+    ID_EDIT_CUT             "剪切选定内容并将其放到剪贴板上\n剪切"
+    ID_EDIT_FIND            "查找指定的文本\n查找"
+    ID_EDIT_PASTE           "插入剪贴板内容\n粘贴"
+    ID_EDIT_REPEAT          "重复上一操作\n重复"
+    ID_EDIT_REPLACE         "用其他文本替换特定的文本\n替换"
+    ID_EDIT_SELECT_ALL      "选定整个文档\n全选"
+    ID_EDIT_UNDO            "撤消上一操作\n撤消"
+    ID_EDIT_REDO            "恢复上次撤消的操作\n重做"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
-    ID_VIEW_TOOLBAR         "��ʾ�����ع�����\n�л�������"
-    ID_VIEW_STATUS_BAR      "��ʾ������״̬��\n�л�״̬��"
+    ID_VIEW_TOOLBAR         "显示或隐藏工具栏\n切换工具栏"
+    ID_VIEW_STATUS_BAR      "显示或隐藏状态栏\n切换状态栏"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
-    AFX_IDS_SCSIZE          "���Ĵ��ڴ�С"
-    AFX_IDS_SCMOVE          "���Ĵ���λ��"
-    AFX_IDS_SCMINIMIZE      "��������СΪͼ��"
-    AFX_IDS_SCMAXIMIZE      "ʹ���������ʾ"
-    AFX_IDS_SCNEXTWINDOW    "�л�����һ���ĵ�����"
-    AFX_IDS_SCPREVWINDOW    "�л���ǰһ���ĵ�����"
-    AFX_IDS_SCCLOSE         "�رջ���ڲ���ʾ�����ĵ�"
+    AFX_IDS_SCSIZE          "更改窗口大小"
+    AFX_IDS_SCMOVE          "更改窗口位置"
+    AFX_IDS_SCMINIMIZE      "将窗口缩小为图标"
+    AFX_IDS_SCMAXIMIZE      "使窗口最大化显示"
+    AFX_IDS_SCNEXTWINDOW    "切换到下一个文档窗口"
+    AFX_IDS_SCPREVWINDOW    "切换到前一个文档窗口"
+    AFX_IDS_SCCLOSE         "关闭活动窗口并提示保存文档"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
-    AFX_IDS_SCRESTORE       "�����ڻָ���������С"
-    AFX_IDS_SCTASKLIST      "���������б�"
+    AFX_IDS_SCRESTORE       "将窗口恢复到正常大小"
+    AFX_IDS_SCTASKLIST      "激活任务列表"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
-    AFX_IDS_PREVIEW_CLOSE   "�رմ�ӡԤ��ģʽ\nȡ��Ԥ��"
+    AFX_IDS_PREVIEW_CLOSE   "关闭打印预览模式\n取消预览"
 END
 
-#endif    // ����(�л����񹲺͹�) resources
+#endif    // 中文(简体，中国) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
@@ -393,9 +464,9 @@ END
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
 LANGUAGE 4, 2
 #pragma code_page(936)
-#include "res\My1.rc2"  // �� Microsoft Visual C++ �༭����Դ
-#include "l.CHS\afxres.rc"          // ��׼���
-#include "l.CHS\afxprint.rc"        // ��ӡ/��ӡԤ����Դ
+#include "res\My1.rc2"  // 非 Microsoft Visual C++ 编辑的资源
+#include "l.CHS\afxres.rc"          // 标准组件
+#include "l.CHS\afxprint.rc"        // 打印/打印预览资源
 #endif
 
 /////////////////////////////////////////////////////////////////////////////
