@@ -5,6 +5,7 @@
 #include "1.h"
 
 #include "1Doc.h"
+#include "dialog3.h"
 #include "..\\Common\\GlobalCommon.h"
 
 #ifdef _DEBUG
@@ -119,14 +120,34 @@ void CMy1Doc::OnImageprocessingSavetonewbmpfile()
 
 void CMy1Doc::OnImageprocessingImageinterpolation()
 {
-	if( pFileBuf != NULL )
-	{
-		int newWidth  = 500;
-		int newHeight = 490;
-		char *pNewFileBuf = ImageInterpolation(pFileBuf,newWidth,newHeight,0);
-		SaveDIB(pNewFileBuf, "C:\\11.bmp");
-		delete [] pFileBuf;
-		pFileBuf = pNewFileBuf;
-		UpdateAllViews(NULL);
-	}
+    dialog3 dlg;
+    dlg.DoModal();
+    if (pFileBuf != NULL)
+    {
+        BITMAPFILEHEADER* pFileHeader = (BITMAPFILEHEADER*)pFileBuf;
+        BITMAPINFOHEADER* pDIBInfo = (BITMAPINFOHEADER*)(pFileBuf + sizeof(BITMAPFILEHEADER));
+        int oldWidth = pDIBInfo->biWidth;
+        int oldHeight = pDIBInfo->biHeight;
+        int newWidth = oldWidth * dlg.xFactor;//设置新的宽度
+        int newHeight = oldHeight * dlg.yFactor;//设置新的长度
+        int method = dlg.combo1.GetCurSel();
+        char* pNewFileBuf = ImageInterpolation(pFileBuf, newWidth, newHeight, method);
+        SaveDIB(pNewFileBuf, "C:\\11.bmp");//文件保存应该要我来命名?但是题目要求没说要保存
+        delete[] pFileBuf;
+        pFileBuf = pNewFileBuf;
+        UpdateAllViews(NULL);
+    }
 }
+//void CMy1Doc::OnImageprocessingImageinterpolation()
+//{
+//	if( pFileBuf != NULL )
+//	{
+//		int newWidth  = 500;//设置新的宽度
+//		int newHeight = 490;//设置新的长度
+//		char *pNewFileBuf = ImageInterpolation(pFileBuf,newWidth,newHeight,0);
+//		SaveDIB(pNewFileBuf, "C:\\11.bmp");
+//		delete [] pFileBuf;
+//		pFileBuf = pNewFileBuf;
+//		UpdateAllViews(NULL);
+//	}
+//}

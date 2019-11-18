@@ -8,10 +8,12 @@
 #define IDR_My1TYPE                     129
 #define IDD_DIALOG1                     130
 #define IDD_DIALOG2                     132
+#define IDD_DIALOG3                     134
 #define IDC_EDIT1                       1000
 #define IDC_EDIT2                       1001
 #define IDC_EDIT3                       1002
 #define IDC_EDIT4                       1003
+#define IDC_COMBO1                      1003
 #define IDC_EDIT5                       1004
 #define IDC_EDIT6                       1005
 #define ID_IMAGEPROCESSING_OPENBMPFILE  32771
@@ -25,9 +27,9 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        134
+#define _APS_NEXT_RESOURCE_VALUE        136
 #define _APS_NEXT_COMMAND_VALUE         32777
-#define _APS_NEXT_CONTROL_VALUE         1003
+#define _APS_NEXT_CONTROL_VALUE         1004
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif
