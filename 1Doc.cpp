@@ -171,5 +171,28 @@ void CMy1Doc::OnImageprocessingMedianfiltering()//中值滤波
 
 void CMy1Doc::OnImageprocessingGaussiansmothing()
 {
+    int  nColorBits = GetColorBits(pFileBuf);
+    int  nImageHeight = GetImageHeight(pFileBuf);
+    int  nBytesPerRow = GetWidthBytes(pFileBuf);
+    double standardDevitation = 100;
+    BITMAPFILEHEADER* pBmpHead = (BITMAPFILEHEADER*)pFileBuf;
+    long lFileSize = pBmpHead->bfSize;
+    char* newpFileBuf = new char[lFileSize];
+    memcpy(newpFileBuf, pFileBuf, lFileSize);
+    BYTE temp;
+    RGBQUAD rgb;
+    bool bGray;
+    for (int y = 0; y < nImageHeight; y++) {
+        for (int x = 0; x < nBytesPerRow; x++) {
+            temp = PixelSmoothing(pFileBuf, x, y, standardDevitation);
+            GetPixel(pFileBuf, x, y, &rgb, &bGray);
+            rgb.rgbReserved = temp;
+            SetPixel(newpFileBuf, x, y, rgb);
+        }
+    }
+    SaveDIB(newpFileBuf, "C:\\11.bmp");//文件保存应该要我来命名?但是题目要求没说要保存
+    delete[] pFileBuf;
+    pFileBuf = newpFileBuf;
+    UpdateAllViews(NULL);
     // TODO: 在此添加命令处理程序代码
 }

@@ -41,6 +41,7 @@ public:
 	afx_msg void OnImageprocessingSavetonewbmpfile();
 	afx_msg void OnImageprocessingImageinterpolation();
     afx_msg void OnImageprocessingMedianfiltering();
+    afx_msg void OnImageprocessingGaussiansmothing();
 };
 
 
