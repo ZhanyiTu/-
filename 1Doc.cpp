@@ -22,6 +22,7 @@ BEGIN_MESSAGE_MAP(CMy1Doc, CDocument)
 	ON_COMMAND(ID_IMAGEPROCESSING_OPENBMPFILE, &CMy1Doc::OnImageprocessingOpenbmpfile)
 	ON_COMMAND(ID_IMAGEPROCESSING_SAVETONEWBMPFILE, &CMy1Doc::OnImageprocessingSavetonewbmpfile)
 	ON_COMMAND(ID_IMAGEPROCESSING_IMAGEINTERPOLATION, &CMy1Doc::OnImageprocessingImageinterpolation)
+    ON_COMMAND(ID_IMAGEPROCESSING_MEDIANFILTERING, &CMy1Doc::OnImageprocessingMedianfiltering)
 END_MESSAGE_MAP()
 
 
@@ -152,3 +153,9 @@ void CMy1Doc::OnImageprocessingImageinterpolation()
 //		UpdateAllViews(NULL);
 //	}
 //}
+
+
+void CMy1Doc::OnImageprocessingMedianfiltering()//中值滤波
+{
+    // TODO: 在此添加命令处理程序代码
+}

@@ -150,6 +150,8 @@ BEGIN
         MENUITEM "Set pixel value",             ID_IMAGEPROCESSING_SETPIXELVALUE
         MENUITEM "Save to new BMP file",        ID_IMAGEPROCESSING_SAVETONEWBMPFILE
         MENUITEM "Image interpolation",         ID_IMAGEPROCESSING_IMAGEINTERPOLATION
+        MENUITEM "Median filtering",            ID_IMAGEPROCESSING_MEDIANFILTERING
+        MENUITEM "Gaussian smoothing",          ID_IMAGEPROCESSING_GAUSSIANSMOTHING
     END
 END
 
