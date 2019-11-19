@@ -7,7 +7,6 @@
 #include "1Doc.h"
 #include "dialog3.h"
 #include "..\\Common\\GlobalCommon.h"
-#include "wingdi.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -23,6 +22,7 @@ BEGIN_MESSAGE_MAP(CMy1Doc, CDocument)
 	ON_COMMAND(ID_IMAGEPROCESSING_SAVETONEWBMPFILE, &CMy1Doc::OnImageprocessingSavetonewbmpfile)
 	ON_COMMAND(ID_IMAGEPROCESSING_IMAGEINTERPOLATION, &CMy1Doc::OnImageprocessingImageinterpolation)
     ON_COMMAND(ID_IMAGEPROCESSING_MEDIANFILTERING, &CMy1Doc::OnImageprocessingMedianfiltering)
+    ON_COMMAND(ID_IMAGEPROCESSING_GAUSSIANSMOTHING, &CMy1Doc::OnImageprocessingGaussiansmothing)
 END_MESSAGE_MAP()
 
 
@@ -156,6 +156,20 @@ void CMy1Doc::OnImageprocessingImageinterpolation()
 
 
 void CMy1Doc::OnImageprocessingMedianfiltering()//中值滤波
+{
+    int  nImageHeight = GetImageHeight(pFileBuf);
+    int  nBytesPerRow = GetWidthBytes(pFileBuf);
+    for (int y = 0; y < nImageHeight; y++) {
+        for (int x = 0; x < nBytesPerRow; x++) {
+            PixelFilter(pFileBuf, x, y);
+        }
+    }
+    //UpdateAllViews(NULL);
+    // TODO: 在此添加命令处理程序代码
+}
+
+
+void CMy1Doc::OnImageprocessingGaussiansmothing()
 {
     // TODO: 在此添加命令处理程序代码
 }
