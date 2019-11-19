@@ -3,10 +3,11 @@
 
 #include "stdafx.h"
 #include "1.h"
-//#pragma comment(lib, "winsock.lib") 
+//#pragma comment(lib, "msvcrtd.lib") 
 #include "1Doc.h"
 #include "dialog3.h"
 #include "..\\Common\\GlobalCommon.h"
+#include "wingdi.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
