@@ -3,7 +3,7 @@
 
 #include "stdafx.h"
 #include "1.h"
-
+//#pragma comment(lib, "winsock.lib") 
 #include "1Doc.h"
 #include "dialog3.h"
 #include "..\\Common\\GlobalCommon.h"

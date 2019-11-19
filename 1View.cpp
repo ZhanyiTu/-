@@ -8,7 +8,7 @@
 #include "1Doc.h"
 #include "1View.h"
 #include "..\\Common\\GlobalCommon.h"
-
+//#pragma comment(lib, "winsock.lib") 
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
