@@ -18,6 +18,7 @@ dialog2::dialog2(CWnd* pParent /*=nullptr*/)
     , r(0)
     , g(0)
     , b(0)
+    , reserved(0)
 {
 
 }
@@ -34,6 +35,7 @@ void dialog2::DoDataExchange(CDataExchange* pDX)
     DDX_Text(pDX, IDC_EDIT4, r);
     DDX_Text(pDX, IDC_EDIT5, g);
     DDX_Text(pDX, IDC_EDIT6, b);
+    DDX_Text(pDX, IDC_EDIT1, reserved);
 }
 
 

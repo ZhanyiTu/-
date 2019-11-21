@@ -117,6 +117,7 @@
     <ClCompile Include="dialog1.cpp" />
     <ClCompile Include="dialog2.cpp" />
     <ClCompile Include="dialog3.cpp" />
+    <ClCompile Include="dialog4.cpp" />
     <ClCompile Include="MainFrm.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -131,6 +132,7 @@
     <ClInclude Include="dialog1.h" />
     <ClInclude Include="dialog2.h" />
     <ClInclude Include="dialog3.h" />
+    <ClInclude Include="dialog4.h" />
     <ClInclude Include="MainFrm.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />

@@ -6,6 +6,7 @@
 //#pragma comment(lib, "msvcrtd.lib") 
 #include "1Doc.h"
 #include "dialog3.h"
+#include "dialog4.h"
 #include "..\\Common\\GlobalCommon.h"
 
 #ifdef _DEBUG
@@ -171,10 +172,12 @@ void CMy1Doc::OnImageprocessingMedianfiltering()//ÖÐÖµÂË²¨
 
 void CMy1Doc::OnImageprocessingGaussiansmothing()
 {
+    dialog4 dlg;
+    dlg.DoModal();
     int  nColorBits = GetColorBits(pFileBuf);
     int  nImageHeight = GetImageHeight(pFileBuf);
     int  nBytesPerRow = GetWidthBytes(pFileBuf);
-    double standardDevitation = 100;
+    double standardDevitation = dlg.standard;
     BITMAPFILEHEADER* pBmpHead = (BITMAPFILEHEADER*)pFileBuf;
     long lFileSize = pBmpHead->bfSize;
     char* newpFileBuf = new char[lFileSize];

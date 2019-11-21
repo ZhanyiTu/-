@@ -160,7 +160,7 @@ void CMy1View::OnImageprocessingSetpixelvalue()
     x = dlg.x;
     y = dlg.y;
 	RGBQUAD rgb;
-	rgb.rgbReserved = 255;
+	rgb.rgbReserved = dlg.reserved;
 	rgb.rgbRed      = dlg.r;
 	rgb.rgbGreen    = dlg.g;
 	rgb.rgbBlue     = dlg.b;

@@ -42,6 +42,9 @@
     <ClCompile Include="dialog3.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="dialog4.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="1.h">
@@ -75,6 +78,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="dialog3.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="dialog4.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
