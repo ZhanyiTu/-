@@ -10,7 +10,10 @@
 #include "..\\Common\\GlobalCommon.h"
 #include <iostream>
 #include <opencv2/opencv.hpp>
+#include <math.h>
 //#pragma comment(lib, "winsock.lib") 
+using namespace cv;
+using namespace std;
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -180,10 +183,20 @@ void CMy1View::OnImageprocessingSetpixelvalue()
 
 void CMy1View::OnPhoneapplicationHistogramequalization()
 {
-    cv::Mat img = cv::imread("C:\\Users\\admin\\Desktop\\code\\mfcdemo\\mfcdemo\\lena256.bmp");//载入一张图片
+    Mat src, src_gray, dst;
+    //src = imread("3 input.bmp");
+    src = imread("C:\\Users\\admin\\Desktop\\code\\mfcdemo\\mfcdemo\\lena256.bmp");
+    imshow("原图像", src);
+    cvtColor(src, src_gray, COLOR_BGR2GRAY);
+    //直方图均衡化
+    equalizeHist(src_gray, dst);
+    imshow("效果图", dst);
+    waitKey(0);
 
-    cv::imshow("测试图片", img);//显示图片 窗口名为“测试图片”
+    //cv::Mat img = cv::imread("C:\\Users\\admin\\Desktop\\code\\mfcdemo\\mfcdemo\\lena256.bmp");//载入一张图片
 
-    cv::waitKey(0);//等待任意键（暂停）
+    //cv::imshow("测试图片", img);//显示图片 窗口名为“测试图片”
+
+    //cv::waitKey(0);//等待任意键（暂停）
     // TODO: 在此添加命令处理程序代码
 }
