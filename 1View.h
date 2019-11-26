@@ -45,6 +45,7 @@ public:
 	afx_msg void OnUpdateImageprocessingDisplayfileheader(CCmdUI *pCmdUI);
 	afx_msg void OnImageprocessingReadpixelvalue();
 	afx_msg void OnImageprocessingSetpixelvalue();
+    afx_msg void OnPhoneapplicationHistogramequalization();
 };
 
 #ifndef _DEBUG  // 1View.cpp 中的调试版本

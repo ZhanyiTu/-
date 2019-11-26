@@ -8,6 +8,8 @@
 #include "1Doc.h"
 #include "1View.h"
 #include "..\\Common\\GlobalCommon.h"
+#include <iostream>
+#include <opencv2/opencv.hpp>
 //#pragma comment(lib, "winsock.lib") 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -27,6 +29,7 @@ BEGIN_MESSAGE_MAP(CMy1View, CView)
 	ON_UPDATE_COMMAND_UI(ID_IMAGEPROCESSING_DISPLAYFILEHEADER, &CMy1View::OnUpdateImageprocessingDisplayfileheader)
 	ON_COMMAND(ID_IMAGEPROCESSING_READPIXELVALUE, &CMy1View::OnImageprocessingReadpixelvalue)
 	ON_COMMAND(ID_IMAGEPROCESSING_SETPIXELVALUE, &CMy1View::OnImageprocessingSetpixelvalue)
+    ON_COMMAND(ID_PHONEAPPLICATION_HISTOGRAMEQUALIZATION, &CMy1View::OnPhoneapplicationHistogramequalization)
 END_MESSAGE_MAP()
 
 // CMy1View 构造/析构
@@ -172,4 +175,15 @@ void CMy1View::OnImageprocessingSetpixelvalue()
 		SetPixel(pDoc->pFileBuf, x, y, rgb);
 		ValidateRect(NULL);
 	}
+}
+
+
+void CMy1View::OnPhoneapplicationHistogramequalization()
+{
+    cv::Mat img = cv::imread("C:\\Users\\admin\\Desktop\\code\\mfcdemo\\mfcdemo\\lena256.bmp");//载入一张图片
+
+    cv::imshow("测试图片", img);//显示图片 窗口名为“测试图片”
+
+    cv::waitKey(0);//等待任意键（暂停）
+    // TODO: 在此添加命令处理程序代码
 }

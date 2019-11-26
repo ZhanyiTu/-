@@ -153,6 +153,12 @@ BEGIN
         MENUITEM "Median filtering",            ID_IMAGEPROCESSING_MEDIANFILTERING
         MENUITEM "Gaussian smoothing",          ID_IMAGEPROCESSING_GAUSSIANSMOTHING
     END
+    POPUP "Phone Application"
+    BEGIN
+        MENUITEM "Histogram equalization",      ID_PHONEAPPLICATION_HISTOGRAMEQUALIZATION
+        MENUITEM "Median filtering",            ID_PHONEAPPLICATION_MEDIANFILTERING
+        MENUITEM "Gaussian smoothing",          ID_PHONEAPPLICATION_GAUSSIANSMOOTHING
+    END
 END
 
 
