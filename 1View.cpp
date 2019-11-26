@@ -185,7 +185,10 @@ void CMy1View::OnPhoneapplicationHistogramequalization()
 {
     Mat src, src_gray, dst;
     //src = imread("3 input.bmp");
-    src = imread("C:\\Users\\admin\\Desktop\\code\\mfcdemo\\mfcdemo\\lena256.bmp");
+    LPCTSTR lpszFilter = "BMP Files (*.bmp)|*.bmp||";
+    CFileDialog dlg(TRUE, NULL, NULL, OFN_NOCHANGEDIR, lpszFilter, NULL);
+    if (dlg.DoModal() != IDOK) return;
+    src = imread(dlg.GetPathName().GetBuffer(0));
     imshow("原图像", src);
     cvtColor(src, src_gray, COLOR_BGR2GRAY);
     //直方图均衡化
