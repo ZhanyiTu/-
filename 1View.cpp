@@ -17,7 +17,7 @@ using namespace std;
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
-Mat pic1;
+Mat src;
 
 
 // CMy1View
@@ -36,7 +36,7 @@ BEGIN_MESSAGE_MAP(CMy1View, CView)
     ON_COMMAND(ID_PHONEAPPLICATION_HISTOGRAMEQUALIZATION, &CMy1View::OnPhoneapplicationHistogramequalization)
     ON_COMMAND(ID_PHONEAPPLICATION_MEDIANFILTERING, &CMy1View::OnPhoneapplicationMedianfiltering)
     ON_COMMAND(ID_PHONEAPPLICATION_GAUSSIANSMOOTHING, &CMy1View::OnPhoneapplicationGaussiansmoothing)
-    ON_COMMAND(ID_PHONEAPPLICATION_3STEPPROCESS, &CMy1View::OnPhoneapplication3stepprocess)
+    ON_COMMAND(ID_PHONEAPPLICATION_OPENIMAGE, &CMy1View::OnPhoneapplicationOpenimage)
 END_MESSAGE_MAP()
 
 // CMy1View 构造/析构
@@ -187,14 +187,14 @@ void CMy1View::OnImageprocessingSetpixelvalue()
 
 void CMy1View::OnPhoneapplicationHistogramequalization()
 {
-    Mat src, src_gray, dst;
+    Mat src_gray, dst;
     vector<Mat> channels;
     //src = imread("3 input.bmp");
-    LPCTSTR lpszFilter = "BMP Files (*.bmp)|*.bmp||";
+    /*LPCTSTR lpszFilter = "BMP Files (*.bmp)|*.bmp||";
     CFileDialog dlg(TRUE, NULL, NULL, OFN_NOCHANGEDIR, lpszFilter, NULL);
     if (dlg.DoModal() != IDOK) return;
-    src = imread(dlg.GetPathName().GetBuffer(0));
-    imshow("原图像", src);
+    src = imread(dlg.GetPathName().GetBuffer(0));*/
+    //imshow("原图像", src);
     split(src, channels);
     Mat imageBlueChannel = channels.at(0);
     Mat imageGreenChannel = channels.at(1);
@@ -207,6 +207,7 @@ void CMy1View::OnPhoneapplicationHistogramequalization()
     //直方图均衡化
     //equalizeHist(src_gray, dst);
     imshow("效果图", dst);
+    src = dst;
     waitKey(0);
 
     //cv::Mat img = cv::imread("C:\\Users\\admin\\Desktop\\code\\mfcdemo\\mfcdemo\\lena256.bmp");//载入一张图片
@@ -222,23 +223,24 @@ void CMy1View::OnPhoneapplicationMedianfiltering()
 {
     // TODO: 在此添加命令处理程序代码
     // load image   
-    LPCTSTR lpszFilter = "BMP Files (*.bmp)|*.bmp||";
-    CFileDialog dlg(TRUE, NULL, NULL, OFN_NOCHANGEDIR, lpszFilter, NULL);
-    if (dlg.DoModal() != IDOK) return;
-    //Mat image = imread("C:\\Users\\admin\\Desktop\\code\\mfcdemo\\mfcdemo\\lena256.bmp", 1);
-    Mat image = imread(dlg.GetPathName().GetBuffer(0), 1);
+    //LPCTSTR lpszFilter = "BMP Files (*.bmp)|*.bmp||";
+    //CFileDialog dlg(TRUE, NULL, NULL, OFN_NOCHANGEDIR, lpszFilter, NULL);
+    //if (dlg.DoModal() != IDOK) return;
+    ////Mat image = imread("C:\\Users\\admin\\Desktop\\code\\mfcdemo\\mfcdemo\\lena256.bmp", 1);
+    //Mat src = imread(dlg.GetPathName().GetBuffer(0), 1);
 
     
 
     // display result  
-    cv::imshow("原图像", image);
+    //cv::imshow("原图像", src);
 
     //median filte  
-    Mat resutl;
-    cv::medianBlur(image, resutl, 7);
+    Mat result;
+    cv::medianBlur(src, result, 7);
 
     //display result  
-    cv::imshow("效果图", resutl);
+    cv::imshow("效果图", result);
+    src = result;
     cv::waitKey();
 }
 
@@ -248,30 +250,33 @@ void CMy1View::OnPhoneapplicationGaussiansmoothing()
     // [1] src读入图片
     // TODO: 在此添加命令处理程序代码
     // load image   
-    LPCTSTR lpszFilter = "BMP Files (*.bmp)|*.bmp||";
-    CFileDialog dlg(TRUE, NULL, NULL, OFN_NOCHANGEDIR, lpszFilter, NULL);
-    if (dlg.DoModal() != IDOK) return;
-    //Mat image = imread("C:\\Users\\admin\\Desktop\\code\\mfcdemo\\mfcdemo\\lena256.bmp", 1);
-    Mat src = imread(dlg.GetPathName().GetBuffer(0), 1);
+    //LPCTSTR lpszFilter = "BMP Files (*.bmp)|*.bmp||";
+    //CFileDialog dlg(TRUE, NULL, NULL, OFN_NOCHANGEDIR, lpszFilter, NULL);
+    //if (dlg.DoModal() != IDOK) return;
+    ////Mat image = imread("C:\\Users\\admin\\Desktop\\code\\mfcdemo\\mfcdemo\\lena256.bmp", 1);
+    //Mat src = imread(dlg.GetPathName().GetBuffer(0), 1);
     //cv::Mat src = cv::imread("C:\\Users\\admin\\Desktop\\code\\mfcdemo\\mfcdemo\\lena256.bmp");
     // [2] dst目标图片
     cv::Mat dst;
     // [3] 高斯滤波  sigma越大越平越模糊
     cv::GaussianBlur(src, dst, cv::Size(5, 5), 3, 3);
     // [4] 窗体显示
-    cv::imshow("src", src);
+    //cv::imshow("src", src);
     cv::imshow("dst", dst);
+    src = dst;
     cv::waitKey(0);
     cv::destroyAllWindows();
 }
 
 
-void CMy1View::OnPhoneapplication3stepprocess()
+
+
+void CMy1View::OnPhoneapplicationOpenimage()
 {
     LPCTSTR lpszFilter = "BMP Files (*.bmp)|*.bmp||";
     CFileDialog dlg(TRUE, NULL, NULL, OFN_NOCHANGEDIR, lpszFilter, NULL);
     if (dlg.DoModal() != IDOK) return;
-    //Mat image = imread("C:\\Users\\admin\\Desktop\\code\\mfcdemo\\mfcdemo\\lena256.bmp", 1);
-    Mat src = imread(dlg.GetPathName().GetBuffer(0), 1);
+    src = imread(dlg.GetPathName().GetBuffer(0), 1);
+    imshow("原图像", src);
     // TODO: 在此添加命令处理程序代码
 }

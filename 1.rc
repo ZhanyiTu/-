@@ -155,10 +155,10 @@ BEGIN
     END
     POPUP "Phone Application"
     BEGIN
+        MENUITEM "Open image",                  ID_PHONEAPPLICATION_OPENIMAGE
         MENUITEM "Histogram equalization",      ID_PHONEAPPLICATION_HISTOGRAMEQUALIZATION
         MENUITEM "Median filtering",            ID_PHONEAPPLICATION_MEDIANFILTERING
         MENUITEM "Gaussian smoothing",          ID_PHONEAPPLICATION_GAUSSIANSMOOTHING
-        MENUITEM "3 step process",              ID_PHONEAPPLICATION_3STEPPROCESS
     END
 END
 

@@ -49,6 +49,7 @@ public:
     afx_msg void OnPhoneapplicationMedianfiltering();
     afx_msg void OnPhoneapplicationGaussiansmoothing();
     afx_msg void OnPhoneapplication3stepprocess();
+    afx_msg void OnPhoneapplicationOpenimage();
 };
 
 #ifndef _DEBUG  // 1View.cpp 中的调试版本
