@@ -46,6 +46,9 @@ public:
 	afx_msg void OnImageprocessingReadpixelvalue();
 	afx_msg void OnImageprocessingSetpixelvalue();
     afx_msg void OnPhoneapplicationHistogramequalization();
+    afx_msg void OnPhoneapplicationMedianfiltering();
+    afx_msg void OnPhoneapplicationGaussiansmoothing();
+    afx_msg void OnPhoneapplication3stepprocess();
 };
 
 #ifndef _DEBUG  // 1View.cpp 中的调试版本
